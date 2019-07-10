@@ -10,7 +10,7 @@
 
 w25qxx_t	w25qxx;
 
-#if (_W25QXX_USE_FREERTOS==1)
+#if (_W25QXX_USE_FREERTOS == 1)
 #define	W25qxx_Delay(delay)		osDelay(delay)
 #include "cmsis_os.h"
 #else
