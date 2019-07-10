@@ -68,7 +68,7 @@ uint8_t W25qxx_ReadStatusRegister(uint8_t SelectStatusRegister_1_2_3)
 {
 	uint8_t	status=0;
 	HAL_GPIO_WritePin(_W25QXX_CS_GPIO, _W25QXX_CS_PIN, GPIO_PIN_RESET);
-	if(SelectStatusRegister_1_2_3==1)
+	if(SelectStatusRegister_1_2_3 == 1)
 	{
 		W25qxx_Spi(0x05);
 		status = W25qxx_Spi(W25QXX_DUMMY_BYTE);
@@ -132,12 +132,12 @@ bool W25qxx_Init(void)
 	while(HAL_GetTick() < 100)
 		W25qxx_Delay(1);
 	uint32_t id;
-	#if (_W25QXX_DEBUG==1)
+	#if (_W25QXX_DEBUG == 1)
 	printf("w25qxx Init Begin...\r\n");
 	#endif
 	id = W25qxx_ReadID();
 	
-	#if (_W25QXX_DEBUG==1)
+	#if (_W25QXX_DEBUG == 1)
 	printf("w25qxx ID:0x%X\r\n", (unsigned int) id);
 	#endif
 	switch(id&0x0000FFFF)
@@ -262,7 +262,7 @@ void W25qxx_EraseChip(void)
 	printf("w25qxx EraseBlock done after %lu ms!\r\n", HAL_GetTick() - StartTime);
 	#endif
 	W25qxx_Delay(10);
-	w25qxx.Lock=0;	
+	w25qxx.Lock = 0;
 }
 //###################################################################################################################
 void W25qxx_EraseSector(uint32_t SectorAddr)
