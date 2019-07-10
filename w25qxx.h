@@ -1,8 +1,9 @@
 #ifndef _W25QXX_H
 #define _W25QXX_H
 
+#include "main.h"
 #include <stdbool.h>
-#include "spi.h"
+//#include "spi.h"
 
 #ifdef __cplusplus
  extern "C" {
@@ -26,22 +27,22 @@ typedef enum
 typedef struct
 {
 	W25QXX_ID_t	ID;
-	uint8_t			UniqID[8];
+	uint8_t		UniqID[8];
 
 	uint16_t    PageSize;
-	uint32_t		PageCount;
-	uint32_t		SectorSize;
-	uint32_t		SectorCount;
-	uint32_t		BlockSize;
-	uint32_t		BlockCount;
+	uint32_t	PageCount;
+	uint32_t	SectorSize;
+	uint32_t	SectorCount;
+	uint32_t	BlockSize;
+	uint32_t	BlockCount;
 
-	uint32_t		CapacityInKiloByte;
+	uint32_t	CapacityInKiloByte;
 	
-	uint8_t	StatusRegister1;
-	uint8_t	StatusRegister2;
-	uint8_t	StatusRegister3;
+	uint8_t		StatusRegister1;
+	uint8_t		StatusRegister2;
+	uint8_t		StatusRegister3;
 	
-	uint8_t	Lock;
+	uint8_t		Lock;
 	
 }w25qxx_t;
 
@@ -55,10 +56,10 @@ void	W25qxx_EraseChip(void);
 void 	W25qxx_EraseSector(uint32_t SectorAddr);
 void 	W25qxx_EraseBlock(uint32_t BlockAddr);
 
-uint32_t	W25qxx_PageToSector(uint32_t	PageAddress);
+uint32_t	W25qxx_PageToSector(uint32_t PageAddress);
 uint32_t	W25qxx_PageToBlock(uint32_t	PageAddress);
-uint32_t	W25qxx_SectorToBlock(uint32_t	SectorAddress);
-uint32_t	W25qxx_SectorToPage(uint32_t	SectorAddress);
+uint32_t	W25qxx_SectorToBlock(uint32_t SectorAddress);
+uint32_t	W25qxx_SectorToPage(uint32_t SectorAddress);
 uint32_t	W25qxx_BlockToPage(uint32_t	BlockAddress);
 
 bool 	W25qxx_IsEmptyPage(uint32_t Page_Address,uint32_t OffsetInByte,uint32_t NumByteToCheck_up_to_PageSize);
