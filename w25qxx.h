@@ -8,7 +8,7 @@
 #ifdef __cplusplus
  extern "C" {
 #endif
-	 
+
 typedef enum
 {
 	W25Q10=1,
@@ -21,7 +21,7 @@ typedef enum
 	W25Q128,
 	W25Q256,
 	W25Q512,
-	
+
 }W25QXX_ID_t;
 
 typedef struct
@@ -37,18 +37,18 @@ typedef struct
 	uint32_t	BlockCount;
 
 	uint32_t	CapacityInKiloByte;
-	
+
 	uint8_t		StatusRegister1;
 	uint8_t		StatusRegister2;
 	uint8_t		StatusRegister3;
-	
+
 	uint8_t		Lock;
-	
+
 }w25qxx_t;
 
 extern w25qxx_t	w25qxx;
 //############################################################################
-// in Page,Sector and block read/write functions, can put 0 to read maximum bytes 
+// in Page,Sector and block read/write functions, can put 0 to read maximum bytes
 //############################################################################
 bool	W25qxx_Init(void);
 
@@ -86,4 +86,3 @@ void 	W25qxx_ReadBlock(uint8_t* pBuffer,uint32_t Block_Address,uint32_t OffsetIn
 #endif
 
 #endif
-

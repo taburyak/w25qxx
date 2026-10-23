@@ -12,4 +12,3 @@
 extern SPI_HandleTypeDef _W25QXX_SPI;
 
 #endif
-

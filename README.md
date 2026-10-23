@@ -13,7 +13,7 @@ Please Do This ...
 <br />
 3) Config "w25qxxConfig.h".
 <br />
-4) Call W25qxx_Init(). 
+4) Call W25qxx_Init().
 <br />
 5) After init, you can watch w25qxx struct.(Chip ID,page size,sector size and ...)
 <br />
